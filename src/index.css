@@ -742,7 +742,7 @@ box-shadow: -15px 0px 20px -15px rgba(0,0,0,0.75);
   font-size: 17px;
 }
 .modal>div>i{
-     color: white;
+     color: black;
     left: 5px;
     position: absolute;
     font-size: 23px;
@@ -817,17 +817,23 @@ box-shadow: -15px 0px 20px -15px rgba(0,0,0,0.75);
 }
 
 .options{
-
+  display: none;
 }
 #mydescr{
-      background: white;
+        color: rgba(255, 255, 255, 0.57);
     padding: 10px;
+    display: block;
+    background: none;
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    padding-top: 20px;
 }
 #modalbg{
   position: fixed;
     left: 0;
     right: 0;
-    background: #93c1f1d1;
+    background: rgba(230, 229, 229, 0.82);
     height: 100%;
 }
 
@@ -879,8 +885,9 @@ box-shadow: 0px 26px 48px -15px rgba(0,0,0,0.75);
 .footer-buttons>h3{
   margin-top: 0;
 }
-.mydescr:hover{
-  cursor: text;
+#mydescr:hover{
+  text-decoration: underline;
+  opacity: .7;
 }
 .modalsubmit {
     text-align: center;
@@ -890,16 +897,18 @@ box-shadow: 0px 26px 48px -15px rgba(0,0,0,0.75);
     right: 0;
 }
 .modalsubmit>button{
-      background: black;
+        background: black;
+    border-bottom: 5px solid #584c4c;
     color: white;
-    width: 300px;
+    width: 200px;
     height: 50px;
     border-radius: 4em;
 }
-
+textarea {
+    resize: none;
+}
 .modalside{
     width: 0;
-    overflow: hidden;
     -webkit-transition: width 1s ease-in-out;
     -moz-transition: width 1s ease-in-out;
     -o-transition: width 1s ease-in-out;
@@ -938,4 +947,84 @@ box-shadow: 0px 26px 48px -15px rgba(0,0,0,0.75);
 }
 .sideopen{
   width: 33%!important;
+}
+
+.arrow-left{
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-right: 25px solid #005aff;
+    position: absolute;
+    left: -33px;
+    top: 50%;
+}
+
+.optionbuttons{
+  position: absolute;
+  bottom: 100px;
+}
+.addquote>button{
+    width: 100%;
+    background: white;
+    color: black;
+    border: none;
+    margin-top: 15px;
+    padding: 10px;}
+
+.options>label{
+      color: white;
+    font-size: 18px;
+    font-weight: 900;}
+.qty{
+  text-align: center;
+}
+.qty>button{
+      background: #1818ff;
+    border-bottom: 5px solid #252dbd;
+    color: white;
+    width: 50px;
+    font-size: 23px;
+    font-weight: 900;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 5px;
+    border-top: none;
+    margin-top: 5px;
+}
+.qty>button:hover{
+  background: #5555ef!important;
+}
+
+.qty>div{
+    margin:auto;
+      width: 50px;
+    text-align: center;
+    background: white;
+    font-weight: 900;
+    display: block;
+    font-size: 20px;
+}
+.calculatedprice{
+  height: 132px;
+  position: relative;
+}
+.calculatedprice>span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 22px;
+}
+#calculatedprice{
+      background: none;
+    border: none;
+    width: 100px;
+}
+#calculatedprice:hover{
+      text-decoration: underline;
+    opacity: .7;
+}
+button[disabled]{
+  background: black;
 }

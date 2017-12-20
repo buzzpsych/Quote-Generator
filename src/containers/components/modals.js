@@ -13,20 +13,15 @@ class Modals extends React.Component {
      this.state = {
      };
 
-this.handlePush = this.handlePush.bind(this);
 this.handleClose = this.handleClose.bind(this);
 this.handleDescr = this.handleDescr.bind(this);
 this.handlePrice = this.handlePrice.bind(this);
 this.handleCustomize = this.handleCustomize.bind(this);
-this.handleSubmit = this.handleSubmit.bind(this);
 
    };
 
   componentDidUpdate(){
-      if (this.props.stepThreeReducer.include_descr && this.props.stepThreeReducer.include_price){
-
-          alert("ADDED DESCRIPTION AND PRICE!");
-      };
+    
   }
 
   handleClose(e){
@@ -59,33 +54,13 @@ this.handleSubmit = this.handleSubmit.bind(this);
     $(".modal").addClass('modalpush');
      e.preventDefault();
        this.props.handleModalSide(e);
+        $(document).ready(function() {
+    $(".options").delay(600).fadeIn(100);
+  });
 
   }
 
-  handleSubmit(e){
-    let product = {
-      "name": this.props.productname,
-      "thumbnail":this.props.thumbnail,
-      "descr": this.props.productDescr,
-      "price":this.props.price,
-    };
-         // product["name"] = this.props.productname;
-          //product ["descr"] = this.props.productDescr;
-  e.preventDefault();
 
-    //console.log(product);
-
-       this.props.dispatch({
-           type: "ADD_PRODUCT",
-           payload: product,
-         })
-  }
-
-  handlePush(e){
-    e.preventDefault();
-
-   // listProductsNames.push(this.props.productname)      
-        }
 
    render() {
       const { modalbg} = this.props;
