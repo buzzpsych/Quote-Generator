@@ -512,11 +512,6 @@ h3{
     font-size: 23px;
 }
 
-.products{
-        height: 85%;
-    overflow: scroll;
-    padding-top: 70px;
-}
 .products>div>div>img{
   width: 150px;
 }
@@ -826,8 +821,7 @@ box-shadow: -15px 0px 20px -15px rgba(0,0,0,0.75);
     background: none;
     width: 100%;
     border: none;
-    margin-top: 15px;
-    padding-top: 20px;
+   
 }
 #modalbg{
   position: fixed;
@@ -961,8 +955,12 @@ textarea {
 }
 
 .optionbuttons{
-  position: absolute;
-  bottom: 100px;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    max-width: 400px;
+    margin: auto;
 }
 .addquote>button{
     width: 100%;

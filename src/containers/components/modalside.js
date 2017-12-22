@@ -74,6 +74,9 @@ class ModalSide extends React.Component {
    let product ={
       "name": this.props.name,
       "thumbnail":this.props.thumbnail,
+      "descr": '',
+      "price": '',
+      "quantity": '',
     };
 
     if (this.props.stepThreeHelpers.include_descr) {
@@ -88,27 +91,24 @@ class ModalSide extends React.Component {
         product.quantity = this.state.count;
     }
     
-         // product["name"] = this.props.productname;
-          //product ["descr"] = this.props.productDescr;
-
-
-    console.log(product);
-
-       this.props.dispatch({
-           type: "ADD_PRODUCT",
-           payload: product,
-         })
-
-        this.props.dispatch({
-           type: "INCLUDE_PRICE",
-           payload: false,
-
-         })
     
-     this.props.dispatch({
-           type: "INCLUDE_DESCRIPTION",
-           payload: false,
-         })
+  this.props.dispatch({
+     type: "ADD_PRODUCT",
+     payload: product,
+   })
+
+  this.props.dispatch({
+     type: "INCLUDE_PRICE",
+     payload: false,
+
+   })
+    
+   this.props.dispatch({
+         type: "INCLUDE_DESCRIPTION",
+         payload: false,
+       })
+
+    this.props.handleClose(e);
   }
   
 render() {
@@ -117,7 +117,7 @@ return (
     <div className="arrow-left"></div>
      	<div className="container-fluid options">
         <label>Description</label>
-        <textarea rows="4" defaultValue={this.props.productDescr} onChange={this.handleEdit} id="mydescr"/>
+        <textarea rows="8" defaultValue={this.props.productDescr} onChange={this.handleEdit} id="mydescr"/>
         <div className="qty col-lg-6">
           <button type="button" onClick={this.incrementCount}>+</button>
           <div>{this.state.count}</div>

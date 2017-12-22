@@ -58,17 +58,37 @@ class Form extends React.Component {
           style: 'header',
           }
         ]},
+         {
+          columns: [
+            { 
+              text: 'Item',
+              bold: true,
+              alignment: 'center',
+              width: 150,
+            },
+            {
+              text: '',
+               bold: true,
+            },
+            {
+              text: 'Price / Quantity',
+              bold: true,
+              alignment: 'right',
+            }
+          ]
+          },
           products.map(function(product) { 
             {
               return [
-              {
+             
+              { margin: [0,20,0,0],
                 columns: [
                   {
                     image: product.product.thumbnail,
                     width: 150,                   
                   },
                   {
-                    width: 300, 
+                    width: 250, 
                     margin: [0,20,0,0],
                     text:[
                       { text: 
@@ -76,13 +96,14 @@ class Form extends React.Component {
                         fontSize: 15,
                         bold: true,
 
-                      },
-                      product.product.descr,
+                      },                     
+                        product.product.descr,              
                     ]
                   },
                   [{
-                    text: product.product.price,
+                    text: '$'+ product.product.price  + 'for' +   product.product.quantity,
                     margin: [0,50,0,0],
+                    alignment: 'center',
                    
                   }],
                 ]
