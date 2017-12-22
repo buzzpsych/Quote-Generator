@@ -9,6 +9,7 @@ class ModalSide extends React.Component {
        this.state = {
        productDescr:this.props.productDescr,
        count: this.props.quantity,
+       calculatedPrice: this.props.price,
       }
   this.handleCalcPrice = this.handleCalcPrice.bind(this);
   this.handleEdit = this.handleEdit.bind(this);
@@ -68,13 +69,16 @@ class ModalSide extends React.Component {
   }
 
   handleSubmit(e){
-    let product ={
+      e.preventDefault();
+   
+   let product ={
       "name": this.props.name,
       "thumbnail":this.props.thumbnail,
     };
+
     if (this.props.stepThreeReducer.include_descr) {
       
-        product.descr = this.state.productDescr;
+       product.descr = this.state.productDescr;
      
     }
 
@@ -86,15 +90,14 @@ class ModalSide extends React.Component {
     
          // product["name"] = this.props.productname;
           //product ["descr"] = this.props.productDescr;
-  e.preventDefault();
 
-    //console.log(product);
+
+    console.log(product);
 
        this.props.dispatch({
            type: "ADD_PRODUCT",
            payload: product,
          })
-        this.props.handleClose(e);
   }
   
 render() {

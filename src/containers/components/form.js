@@ -47,8 +47,8 @@ class Form extends React.Component {
       logo = logo.replace('url("','').replace(')','');
         //PDF GENERATION OBJECT
     let docDefinition = {
-      content:[{  
-        columns:[{   
+      content:[{
+        columns:[{
           image: logo,
           width: 150,
           style:'logo',
@@ -60,16 +60,41 @@ class Form extends React.Component {
         ]},
           products.map(function(product) { 
             {
-              return [{
+              return [
+              {
+                columns: [
+                  {
+                  
+                    text: 'Item',           
+                  },
+                  {
+                    width: 300, 
+                    margin: [0,20,0,0],
+                    text:[
+                      { text: 'Description',
+                        fontSize: 15,
+                        bold: true,
+
+                      },
+                   
+                    ]
+                  },
+                  [{
+                    text: 'Quantity / Price',
+                    margin: [0,50,0,0],
+                   
+                  }],
+              ]},
+              {
                 columns: [
                   {
                     image: product.product.thumbnail,
                     width: 150,                   
                   },
-                  {  
+                  {
                     width: 300, 
                     margin: [0,20,0,0],
-                    text:[ 
+                    text:[
                       { text: 
                         product.product.name + ' \n\n', 
                         fontSize: 15,
@@ -83,7 +108,7 @@ class Form extends React.Component {
                     text: product.product.price,
                     margin: [0,50,0,0],
                    
-                  }]
+                  }],
                 ]
               }]
                columnGap: 30
@@ -101,11 +126,10 @@ class Form extends React.Component {
           margin: [0,50,20,0],
         
         },
-        product: { 
+        product: {
           bold: true,
           fontSize: 15,
-         
-                    
+                
         },
         productdescr: {
           margin: [0,0,0,0],

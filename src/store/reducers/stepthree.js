@@ -4,10 +4,11 @@ const stepThreeReducer = (state={}, action) => {
   switch(action.type) {
       case 'ADD_PRODUCT' : {
              return state = [...state,
-      	{ product: action.payload
+      	 { product: action.payload
 
-      }]
-          }
+       }]
+     }
+          
     
       case 'INCLUDE_DESCRIPTION' : { 
              return state = {...state,
