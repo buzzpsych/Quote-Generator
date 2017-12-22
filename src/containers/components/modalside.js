@@ -76,13 +76,13 @@ class ModalSide extends React.Component {
       "thumbnail":this.props.thumbnail,
     };
 
-    if (this.props.stepThreeReducer.include_descr) {
+    if (this.props.stepThreeHelpers.include_descr) {
       
        product.descr = this.state.productDescr;
      
     }
 
-    if (this.props.stepThreeReducer.include_price) {
+    if (this.props.stepThreeHelpers.include_price) {
 
         product.price = this.state.calculatedPrice;
         product.quantity = this.state.count;
@@ -97,6 +97,17 @@ class ModalSide extends React.Component {
        this.props.dispatch({
            type: "ADD_PRODUCT",
            payload: product,
+         })
+
+        this.props.dispatch({
+           type: "INCLUDE_PRICE",
+           payload: false,
+
+         })
+    
+     this.props.dispatch({
+           type: "INCLUDE_DESCRIPTION",
+           payload: false,
          })
   }
   

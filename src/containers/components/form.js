@@ -64,30 +64,6 @@ class Form extends React.Component {
               {
                 columns: [
                   {
-                  
-                    text: 'Item',           
-                  },
-                  {
-                    width: 300, 
-                    margin: [0,20,0,0],
-                    text:[
-                      { text: 'Description',
-                        fontSize: 15,
-                        bold: true,
-
-                      },
-                   
-                    ]
-                  },
-                  [{
-                    text: 'Quantity / Price',
-                    margin: [0,50,0,0],
-                   
-                  }],
-              ]},
-              {
-                columns: [
-                  {
                     image: product.product.thumbnail,
                     width: 150,                   
                   },
