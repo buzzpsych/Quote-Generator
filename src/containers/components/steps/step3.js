@@ -23,10 +23,13 @@ class Step3 extends React.Component {
     );
     
      return (
+     <div>
+      <h3>Choose products for your quote</h3>
        <div className="products container-fluid">
-          <h3>Choose products for your quote</h3>
+          
               {listProducts}
        </div>
+      </div>
      );
    }
 

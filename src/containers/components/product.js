@@ -54,11 +54,10 @@ class Product extends React.Component {
    render() {
       const { name , id} = this.props;
      return (
-     	<div  className={classNames({activeproduct:this.state.isModalOpen},'col-lg-4 col-md-4')}>
+     	<div  className={classNames({activeproduct:this.state.isModalOpen},'item')}>
         <div onClick={this.handleModal}>
         <img src={this.props.thumbnail}/>
         <li className="productname">{this.props.name}</li>
-        <li className="price col-lg-12">${this.props.price}</li>
         </div>  
         {  this.state.isModalOpen ?     
           <Modals handleModalSide={this.handleModalSide}  modalbg={this.props.modalbg} handleClose={this.handleClose} thumbnail={this.props.thumbnail} productname={this.props.name} />
