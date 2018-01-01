@@ -14,6 +14,7 @@
     "imageurl-base64": "^1.0.0",
     "imgur-uploader": "^4.2.1",
     "jquery": "^3.2.1",
+    "jquery-mousewheel": "^3.1.13",
     "messagebar": "^0.2.1",
     "noty": "^3.1.2",
     "pdfmake": "^0.1.33",

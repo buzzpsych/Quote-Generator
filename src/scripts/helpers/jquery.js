@@ -1,5 +1,6 @@
 //MOVE STEP BUTTONS INTO A DIFFERENT CONTAINER
 import $ from "jquery";
+import mousewheel from "jquery-mousewheel";
 
 export function detatchButtons (){
 $(document).ready(function() {
@@ -30,6 +31,11 @@ $(document).ready(function() {
 }
 
 export function stepThree (){
+
+$('.products').on('mousewheel', function(event) {
+    this.scrollLeft -= (event.deltaY);
+    console.log(event.deltaX, event.deltaY, event.deltaFactor);
+});
 $(document).ready(function() {
  $('.globalContainer').addClass("productglobal");
     $("#quoteformcont").addClass("initialproductcont");
