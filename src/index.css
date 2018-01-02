@@ -515,11 +515,12 @@ h3{
 }
 
 .products{
-overflow: auto;
-white-space: nowrap;
-padding-left: 150px!important;
-position: relative;
-height: 300px;
+    overflow: auto;
+    white-space: nowrap;
+    padding-left: 150px!important;
+    position: relative;
+    height: 400px;
+    padding-top: 100px;
 }
 .products::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
@@ -798,8 +799,10 @@ box-shadow: -15px 0px 20px -15px rgba(0,0,0,0.75);
     box-shadow: none!important;
 }
 
-.productglobalbg>div>.footer-buttons{
-
+.productglobal>div>.footer-buttons>button{
+background: white!important;
+color:#0072ff!important;
+border-bottom: 5px solid #b2daff!important;
 }
 
 .activeproduct{
