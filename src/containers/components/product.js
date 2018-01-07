@@ -30,7 +30,6 @@ class Product extends React.Component {
    }
 
   handleModal(e) {
-  $('.footer-buttons').addClass("modalsteps");
   $('.products').addClass("inactiveproducts");
    $( "#quoteformcont" ).append( "<div id='modalbg'></div>" );
    $(".quoteformparentcont").addClass("productcontainer");
@@ -41,7 +40,6 @@ class Product extends React.Component {
 
   handleClose(e) {
      $('.modalside').removeClass("sideopen");
-     $('.footer-buttons').removeClass("modalsteps");
     $( "#modalbg" ).remove();
     $('.products').removeClass("inactiveproducts");
       this.setState({
@@ -49,6 +47,23 @@ class Product extends React.Component {
       isModalSideOpen: false,
 
     });
+  }
+  handleSubmit(e){
+e.preventDefault();
+   
+   let product ={
+      "name": this.props.name,
+      "thumbnail":this.props.thumbnail,
+      "descr": this.state.productDescr,
+      "price":  this.state.calculatedPrice,
+      "quantity": this.state.count,
+    };
+
+     this.props.dispatch({
+     type: "ADD_PRODUCT",
+     payload: product,
+   })
+
   }
   
    render() {
@@ -64,7 +79,7 @@ class Product extends React.Component {
         : null
         }
           {  this.state.isModalSideOpen ?     
-          <ModalSide handleClose={this.handleClose} thumbnail={this.props.thumbnail} name={this.props.name} productDescr={this.props.descr} quantity={this.props.quantity} price={this.props.price} />
+          <ModalSide handleSubmit={this.handleSubmit} handleClose={this.handleClose} thumbnail={this.props.thumbnail} name={this.props.name} productDescr={this.props.descr} quantity={this.props.quantity} price={this.props.price} />
         : null
         }
 

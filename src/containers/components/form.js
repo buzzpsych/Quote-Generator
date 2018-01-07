@@ -5,11 +5,10 @@ import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import StepZilla from 'react-stepzilla';
 import {connect} from 'react-redux';
-import Step1 from './steps/step1';
-import Step2 from './steps/step2';
-import Step3 from './steps/step3';
-import Step4 from './steps/step4';
-import Step5 from './steps/step5';
+import Logo from './steps/logo';
+import Title from './steps/title';
+import Catalog from './steps/catalog';
+import Share from './steps/share';
 import i2b from 'imageurl-base64';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -18,11 +17,10 @@ const customTitle='';
 const products = [];
 const steps =
     [
-      {name: 'Step 1', component: <Step1 />},
-      {name: 'Step 2', component: <Step2 />},
-      {name: 'Step 3', component: <Step3 />},
-      {name: 'Step 4', component: <Step4 />},
-      {name: 'Step 5', component: <Step5 />}
+      {name: 'Logo', component: <Logo />},
+      {name: 'Title', component: <Title />},
+      {name: 'Catalog', component: <Catalog />},
+      {name: 'Share', component: <Share />}
     ]
 
 class Form extends React.Component {
@@ -38,7 +36,6 @@ class Form extends React.Component {
   render() { 
 
   if(this.props.stepFiveReducer.showPreview) {
-     
     customTitle= this.props.stepTwoReducer.pdfTitle;
            
     $("#iframeContainer").show();
@@ -101,7 +98,7 @@ class Form extends React.Component {
                     ]
                   },
                   [{
-                    text: '$'+ product.product.price  + 'for' +   product.product.quantity,
+                    text: '$'+ product.product.price  + ' / ' +   product.product.quantity,
                     margin: [0,50,0,0],
                     alignment: 'center',
                    
@@ -145,7 +142,7 @@ class Form extends React.Component {
           iframe.src = dataUrl;
           targetElement.appendChild(iframe);
       });
-  }
+  } 
 
     return (
       <div className="quoteformparentcont">

@@ -4,9 +4,6 @@ import $ from "jquery";
 import classNames from 'classnames';
 import 'react-accessible-accordion/dist/react-accessible-accordion.css';
 
-// const pushProduct = [];
-
-
 class Modals extends React.Component {
   constructor(props) {
      super(props);
@@ -28,8 +25,6 @@ this.handleCustomize = this.handleCustomize.bind(this);
 
         this.props.handleClose(e);
   }
-
-
 
   handleDescr(e){
     e.preventDefault();

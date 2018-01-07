@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import $ from "jquery"
 
-
+const products = [];
 class ModalSide extends React.Component {
   constructor(props) {
      super(props);
@@ -13,8 +13,6 @@ class ModalSide extends React.Component {
       }
   this.handleCalcPrice = this.handleCalcPrice.bind(this);
   this.handleEdit = this.handleEdit.bind(this);
-  this.handleDescr = this.handleDescr.bind(this);
-	this.handlePrice = this.handlePrice.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
   this.incrementCount = this.incrementCount.bind(this);
   this.DecrementCount = this.DecrementCount.bind(this);
@@ -22,27 +20,6 @@ class ModalSide extends React.Component {
   componentDidMount(){
     document.getElementById("mydescr").contentEditable = true;
     document.getElementById("calculatedprice").contentEditable = true;
-  }
-
-   handleDescr(e){
-        $('.optionbuttons>.tabbutton:nth-child(1)>button').attr('disabled','disabled');
-    e.preventDefault();
-     this.props.dispatch({
-           type: "INCLUDE_DESCRIPTION",
-           payload: true,
-         })
-  } 
-
-   handlePrice(e){
-    $('.optionbuttons>.tabbutton:nth-child(3)>button').attr('disabled','disabled');
-     e.preventDefault();
-
-    this.props.dispatch({
-           type: "INCLUDE_PRICE",
-           payload: true,
-
-         })
-
   }
 
   handleEdit(event) {
@@ -69,46 +46,24 @@ class ModalSide extends React.Component {
   }
 
   handleSubmit(e){
-      e.preventDefault();
-   
+     e.preventDefault();
+     $("#next-button").prop('disabled', false);
    let product ={
       "name": this.props.name,
       "thumbnail":this.props.thumbnail,
-      "descr": '',
-      "price": '',
-      "quantity": '',
+      "descr": this.state.productDescr,
+      "price":  this.state.calculatedPrice,
+      "quantity": this.state.count,
     };
-
-    if (this.props.stepThreeHelpers.include_descr) {
-      
-       product.descr = this.state.productDescr;
-     
-    }
-
-    if (this.props.stepThreeHelpers.include_price) {
-
-        product.price = this.state.calculatedPrice;
-        product.quantity = this.state.count;
-    }
-    
-    
-  this.props.dispatch({
+   
+     this.props.dispatch({
      type: "ADD_PRODUCT",
      payload: product,
    })
-
-  this.props.dispatch({
-     type: "INCLUDE_PRICE",
-     payload: false,
-
-   })
-    
-   this.props.dispatch({
-         type: "INCLUDE_DESCRIPTION",
-         payload: false,
-       })
-
+  
+   
     this.props.handleClose(e);
+
   }
   
 render() {
@@ -129,13 +84,7 @@ return (
         </div>  
 
         <div className="optionbuttons container-fluid">
-          <div className="tabbutton col-lg-5">
-            <button onClick={this.handleDescr}>include description</button>
-          </div>
-          <div className="col-lg-2"></div>
-          <div className="tabbutton col-lg-5">
-            <button onClick={this.handlePrice}>include price</button>
-          </div>
+          
           <div className="addquote col-lg-12">
             <button onClick={this.handleSubmit}>Add to my quote</button>
           </div>

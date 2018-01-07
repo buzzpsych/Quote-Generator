@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux';
 
 class Preview extends React.Component {
 
@@ -14,6 +15,7 @@ class Preview extends React.Component {
    render() {
      return (
        <div id="previewpop">
+       
         <div className="custom-file-container__image-preview">
         </div>
         <div id="iframeContainer"></div>
@@ -23,4 +25,7 @@ class Preview extends React.Component {
 
 }
 
-export default Preview
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(Preview)
+

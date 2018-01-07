@@ -1,7 +1,6 @@
 //MOVE STEP BUTTONS INTO A DIFFERENT CONTAINER
 import $ from "jquery";
 import mousewheel from "jquery-mousewheel";
-
 export function detatchButtons (){
 $(document).ready(function() {
     $(".footer-buttons").detach().appendTo(".custom-file-container");       
@@ -34,33 +33,23 @@ export function stepThree (){
 
 $('.products').on('mousewheel', function(event) {
     this.scrollLeft -= (event.deltaY);
-    console.log(event.deltaX, event.deltaY, event.deltaFactor);
 });
 $(document).ready(function() {
+   $("#next-button").prop('disabled', true);
  $('.globalContainer').addClass("productglobal");
     $("#quoteformcont").addClass("initialproductcont");
         $(".quoteformparentcont").addClass("productcontainer");
         $(".products>div").each(function(index) {
-      $(this).delay(200*index).fadeIn(300);
+      $(this).delay(200*index).fadeTo(1000, 1);
  });
-});
-}
-
-export function stepFour(){
-$(document).ready(function() {
-     $( "#modalbg" ).remove();
-		$('.footer-buttons>h3').detach();
-    $('#stepsButtons').empty("Choose products for your quote");
-    $('.globalContainer').removeClass("productglobal");
-     $("#quoteformcont").removeClass("initialproductcont");
-
-    $(".quoteformparentcont").removeClass("productcontainer");
 });
 }
 
 export function stepFive(){
 $(document).ready(function() {
+    $(".footer-buttons").hide();
      $( "#modalbg" ).remove();
+     $('.globalContainer').addClass("share");
      $('.globalContainer').removeClass("productglobal");
      $("#quoteformcont").removeClass("initialproductcont");
     $(".quoteformparentcont").removeClass("productcontainer");
