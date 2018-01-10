@@ -36,10 +36,10 @@ class Share extends React.Component {
     interactive
     arrow={true}
     html={(
-      <div>
-       test
+      <a href={'/pdf/'+ this.props.pdf.path}>
+       SHARE
       
-      </div>
+      </a>
     )}
   >
 

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link, IndexRoute, hashHistory, 
 import './index.css';
 import './bootstrap.min.css';
 import QuoteContainer from './containers/quoteContainer';
+import Pdf from './containers/pdf';
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import reducers from './store/reducers/index'
@@ -23,10 +24,9 @@ ReactDOM.render(
   <Provider store={store}>
   <Router>
     <div>
-      <Route path='/' component={QuoteContainer}/>
-        <Switch>
-
-        </Switch>
+         <Route exact path='/' component={QuoteContainer}/>
+        <Route path='/pdf/:path' component={Pdf}/>
+      
     </div>
     </Router>
     </Provider>

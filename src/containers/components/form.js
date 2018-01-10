@@ -10,6 +10,8 @@ import Title from './steps/title';
 import Catalog from './steps/catalog';
 import Share from './steps/share';
 import i2b from 'imageurl-base64';
+import axios from 'axios';
+import randomstring from "randomstring";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const upload ='';
@@ -22,21 +24,24 @@ const steps =
       {name: 'Catalog', component: <Catalog />},
       {name: 'Share', component: <Share />}
     ]
-
+const path = randomstring.generate();
 class Form extends React.Component {
 
   constructor(props) {
      super(props);
+   
    }
 
+   componentDidMount(){
+     this.props.dispatch({type: "SAVE_PATH", payload:path})
+   }
   componentWillReceiveProps() {
     products = this.props.stepThreeReducer;
-  }
-   
-  render() { 
 
-  if(this.props.stepFiveReducer.showPreview) {
-    customTitle= this.props.stepTwoReducer.pdfTitle;
+  }
+
+  handleGeneration(){  
+ customTitle= this.props.stepTwoReducer.pdfTitle;
            
     $("#iframeContainer").show();
 
@@ -141,7 +146,28 @@ class Form extends React.Component {
         const iframe = document.createElement('iframe');
           iframe.src = dataUrl;
           targetElement.appendChild(iframe);
+          //POSTING
+        axios.post('http://localhost:3001/pdf', {
+        path: path,
+        source: dataUrl,
+      })
+      .then(function (response) {
+       console.log(path);
+     
+      })
+      .catch(function (error) {
+        console.log(error);
       });
+
+      });
+
+  }
+   
+  render() { 
+     
+  if(this.props.stepFiveReducer.showPreview) {
+    {this.handleGeneration()}  
+    
   } 
 
     return (
