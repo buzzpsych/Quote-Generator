@@ -1,2 +1,2 @@
-web: node server.js -p $PORT
+web: react-scripts start
 api: node server.js
