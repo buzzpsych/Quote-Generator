@@ -42,7 +42,7 @@
     "redux-devtools": "^3.4.0"
   },
   "scripts": {
-    "start": "nf start -p 3000",
+   "start": "node server.js",
     "server": "node server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
