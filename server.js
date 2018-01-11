@@ -74,4 +74,4 @@ app.listen(port, function() {
 });
 
 //MONGODB CONFIG
-mongoose.connect(process.env.DB);
+mongoose.connect('mongodb://qg:lizzie89@ds249707.mlab.com:49707/heroku_gkvzflvz');
