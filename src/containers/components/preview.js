@@ -12,13 +12,12 @@ class Preview extends React.Component {
 
    }
 
+
    render() {
      return (
-       <div id="previewpop">
-       
+       <div id="previewpop">  
         <div className="custom-file-container__image-preview">
-        </div>
-        <div id="iframeContainer"></div>
+        </div>     
       </div>
      );
    }

@@ -29,20 +29,18 @@ class Form extends React.Component {
 
   constructor(props) {
      super(props);
-   
    }
 
    componentDidMount(){
      this.props.dispatch({type: "SAVE_PATH", payload:path})
    }
+
   componentWillReceiveProps() {
     products = this.props.stepThreeReducer;
-
   }
 
   handleGeneration(){  
- customTitle= this.props.stepTwoReducer.pdfTitle;
-           
+ customTitle= this.props.stepTwoReducer.pdfTitle;      
     $("#iframeContainer").show();
 
     let logo = $(".custom-file-container__image-preview").css('background-image');
@@ -139,7 +137,6 @@ class Form extends React.Component {
       }
     }
 
-
     const pdfDocGenerator = pdfMake.createPdf(docDefinition);
       pdfDocGenerator.getDataUrl((dataUrl) => {
         const targetElement = document.querySelector('#iframeContainer');
@@ -160,7 +157,6 @@ class Form extends React.Component {
       });
 
       });
-
   }
    
   render() { 

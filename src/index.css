@@ -201,21 +201,13 @@ margin-left:-200px;
 }
 
 #iframeContainer{
-  -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
     border: 25px solid white;
     width: 865px;
-    height: 80%;
+    height: 800px;
     display: none;
-    max-width: 960px;
     margin: auto;
-    right: 0;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9999999;
-    position: absolute;
+    margin-top: 50px;
 }
 #iframeContainer>iframe{
   width: 100%;
@@ -319,7 +311,7 @@ box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
 .globalContainer{
   height: 100vh;
   background-size: cover;
-  background-image: url('../public/assets/img/bg.png');
+  background-image: url('../public/assets/img/bgqg.jpeg');
 }
 
 .sidebar{
@@ -376,9 +368,9 @@ display: none;
   font-family: 'Josefin Sans', sans-serif;
   line-height: 2.4;
   font-size: 18px;
-  background: #23527c;
-  color: white;
-   border-bottom: 5px solid #0c4375;
+  background: white;
+  color: black;
+   border-bottom: 5px solid #adadad;
 }
 #productsteps>button{
   background: none;
@@ -394,6 +386,7 @@ display: none;
 }
 
 #title>h1{
+  color:white;
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
       margin-top: 55px;
@@ -545,6 +538,7 @@ h3{
 }
 
 .products>div{
+      border-bottom: 5px solid #b2daff!important;
   opacity: 0;
          display: inline-block;
     padding: 40px;
@@ -583,6 +577,7 @@ cursor: pointer;
   margin-top: 100px;
   position: relative;
   top:25%;
+  font-weight: 200;
 }
 
 .initialproductcont>.step-progress>.multi-step>div{
@@ -821,7 +816,6 @@ box-shadow: -15px 0px 20px -15px rgba(0,0,0,0.75);
 }
 
 .productglobal>div>.footer-buttons>button{
-background: white!important;
 color:#0072ff!important;
 border-bottom: 5px solid #b2daff!important;
 }
@@ -937,8 +931,8 @@ box-shadow: 0px 26px 48px -15px rgba(0,0,0,0.75);
     right: 0;
 }
 .modalsubmit>button{
-        background: black;
-    border-bottom: 5px solid #584c4c;
+        background: #005aff;
+    border-bottom: 5px solid #2150a7;
     color: white;
     width: 200px;
     height: 50px;
@@ -1070,7 +1064,15 @@ textarea {
     opacity: .7;
 }
 button[disabled]{
-  background: black;
+  background: #00000047!important;
+}
+
+.share{
+      font-size: 38px;
+}
+.share:hover{
+  cursor: pointer;
+  color:black;
 }
 .share>div>.quoteformparentcont{
   width:100%!important;
@@ -1095,6 +1097,48 @@ button[disabled]{
 #sharecont{
       text-align: center;
     color: white;
-    font-size: 38px;
-    top: 3%;
+
+}
+
+#sharedroor{
+    padding: 40px;
+    font-stretch: 19px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #000000a1;
+    height: 100%;
+}
+#sharedroor>button{
+    background: none;
+    border: none;
+    font-size: 16px;
+
+}
+#sharedroor>hr{
+  max-width: 300px;
+}
+#sharedquote{
+  background: #0072ff;
+    position: absolute!important;
+    left: 0;
+    right:0;
+    top: 0!important;
+    height: 100%!important;
+    width: 100%!important;
+}
+#sharedquote>h1{
+  color:white;
+  text-align: center;
+}
+
+#sharedquote>iframe{
+      position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+        width: 865px;
+    height: 800px;
 }

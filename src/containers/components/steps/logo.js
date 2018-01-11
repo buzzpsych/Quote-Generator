@@ -4,7 +4,7 @@ import $ from "jquery";
 import { connect } from 'react-redux'
 import { getLogo } from './../../../store/actions/stepone'
 import { detatchButtons, stepOne } from './../../../scripts/helpers/jquery'
-import logo from './../../../../public/assets/img/logo.png'
+import logo from './../../../../public/assets/img/yourlogo.png'
 
 ///CONSTANTS
 var upload ='';

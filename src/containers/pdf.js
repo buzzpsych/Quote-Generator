@@ -29,7 +29,7 @@ constructor(props) {
 
  render() {
    return (
-     	<div>
+     	<div id="sharedquote">
      	<h1>Your quote</h1>
      	<iframe src={this.state.source}/>
      	</div>
