@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 //set our port to either a predetermined port number if you have set 
 //it up, or 3001
-var port = process.env.API_PORT || 8000;
+var port = process.env.API_PORT || 3000;
 
 //now we should configure the API to use bodyParser and look for 
 //JSON data in the request body
