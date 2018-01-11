@@ -36,7 +36,7 @@ clipboard.on('error', function(e) {
 
   handlePreview(event){
     event.preventDefault();
-    window.open('https://qg-be.herokuapp.com/pdf/'+this.props.pdf.path);
+    window.open('https://qg-fe.herokuapp.com/pdf/'+this.props.pdf.path);
 
   }
 
