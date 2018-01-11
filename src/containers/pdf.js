@@ -13,7 +13,7 @@ constructor(props) {
   }
   componentDidMount() {
   	///MAKE GET CALL WITH PARAMATER PATH 
-  	axios.get('http://localhost:3001/pdf/'+this.props.match.params.path)
+  	axios.get('https://qg-be.herokuapp.com/pdf/'+this.props.match.params.path)
   .then(({ data })=> {
   	
   	this.setState({

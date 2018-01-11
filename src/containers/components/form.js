@@ -144,7 +144,7 @@ class Form extends React.Component {
           iframe.src = dataUrl;
           targetElement.appendChild(iframe);
           //POSTING
-        axios.post('http://localhost:3001/pdf', {
+        axios.post('https://qg-be.herokuapp.com/pdf', {
         path: path,
         source: dataUrl,
       })
