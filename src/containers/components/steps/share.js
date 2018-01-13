@@ -51,7 +51,7 @@ clipboard.on('error', function(e) {
       <div id="sharecont">
       { this.state.sharedroor ?
           <div id="sharedroor">
-            <button data-clipboard-text={'http://localhost:3000/pdf/'+this.props.pdf.path} onClick={this.handleCopy} id="copy">Copy link to clipboard <i className="fa fa-clipboard" aria-hidden="true"></i>
+            <button data-clipboard-text={'https://qg-fe.herokuapp.com/pdf/'+this.props.pdf.path} onClick={this.handleCopy} id="copy">Copy link to clipboard <i className="fa fa-clipboard" aria-hidden="true"></i>
 </button><hr/>
      <button onClick={this.handlePreview} id="previewbtn">Preview  </button>
           </div> 
