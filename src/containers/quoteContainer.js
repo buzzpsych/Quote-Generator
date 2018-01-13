@@ -3,6 +3,7 @@ import Form from './components/form'
 import Sidebar from './components/sidebar'
 import Preview from './components/preview'
 import {connect} from 'react-redux';
+import logo from './../../public/assets/img/qglogo.png'
 
 class QuoteContainer extends React.Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class QuoteContainer extends React.Component {
    return (
      <div className="globalContainer">
         <div id="title" className="container-fluid">
-          <h1>QUOTE GENERATOR</h1>
+          <img src={logo}/>
         </div>
         <div  className="container-fluid custom-file-container" data-upload-id="myUniqueUploadId">
           <Form/>

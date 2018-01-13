@@ -256,6 +256,7 @@ margin-left:-200px;
     border-left: none;
     border-right: none;
     border-top: none;
+    background: none;
 }
 
 #customtitleinput:disabled {
@@ -384,12 +385,11 @@ display: none;
   color: white;
    border-bottom: 5px solid #0c4375;
 }
-
-#title>h1{
-  color:white;
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-      margin-top: 55px;
+#title{
+ text-align: center; 
+}
+#title>logo{
+width: 150px;
 }
 .custom-file-container__custom-file__custom-file-input{
 position: absolute;
@@ -526,7 +526,8 @@ h3{
     position: relative;
     height: 50%;
     top:25%;
-    padding-top: 40px;
+    padding-top: 60px;
+    overflow: -moz-scrollbars-none;
   
 }
 .products::-webkit-scrollbar {
@@ -574,7 +575,6 @@ cursor: pointer;
 .initialproductcont>div>div>div>h3{
   padding-left: 200px;
   color: white;
-  margin-top: 100px;
   position: relative;
   top:25%;
   font-weight: 200;
