@@ -204,7 +204,7 @@ margin-left:-200px;
     box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
     border: 25px solid white;
     width: 865px;
-    height: 800px;
+    height: 600px;
     display: none;
     margin: auto;
     margin-top: 50px;
@@ -764,7 +764,7 @@ box-shadow: -15px 0px 20px -15px rgba(0,0,0,0.75);
     height: 600px;
     margin: auto;
     width: 33%;
-    z-index: 9;
+    z-index: 99999999;
     background-color: white;
 }
 .productname{
@@ -956,7 +956,7 @@ textarea {
     transform: translateY(-50%);
     top: 50%;
     height: 600px;
-    z-index: 9999;
+    z-index: 99999999;
     max-width: 50%;
     margin-right: auto;
     background: #005aff;
@@ -972,7 +972,7 @@ textarea {
     border: 12px solid #005aff;
     height: 600px;
     margin-left: auto;
-    z-index: 9;
+    z-index: 99999999;
     background-color: white;
     margin:0 0 0 auto;
 }
@@ -1141,5 +1141,5 @@ button[disabled]{
     transform: translateY(-50%);
     margin: auto;
         width: 865px;
-    height: 800px;
+    height: 600px;
 }
